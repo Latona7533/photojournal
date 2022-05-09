@@ -1,0 +1,42 @@
+
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?{% now 'U' %} ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+<body>
+
+
+<header>
+
+    <div class="header-elem">
+
+        <a href ="/" id ="header">главная</a>
+        <a href ="">моя страница</a>
+        <a href ="chat/">чаты</a>
+        <a href ="/api/v1/">разработчикам</a>
+        <a href ="">{% trans 'выйти' %}</a>
+    </div>
+</header>
+
+<form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+
+</form>
+
+<script src="{% static 'js/index.js' %}"></script>
+
+{% block content %}
+{% endblock %}
+
+
+</body>
+</html>
+

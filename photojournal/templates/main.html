@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="blog">
+
+
+</div>
+{% for blog in blogs %}
+
+               <div class="blog_elems">
+                   <a href="{% url 'post-detail' blog.id %} ">
+
+                   </a>
+
+               </div>
+    {{blog.description}}
+<img src ="{{blog.photo.url}}" alt ="...">
+
+{% endfor %}
+
+{% endblock %}
+
+
+

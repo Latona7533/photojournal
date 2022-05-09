@@ -1,0 +1,47 @@
+
+body{
+ background-color:  grey;
+ margin: 0 auto;
+}
+
+header{
+    background-color: white;
+    height: 80px;
+}
+
+header> .header-elem {
+    display:  flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a: hover{
+    color: pink;
+}
+
+h1{
+    width: 300px;
+}
+
+.chatblock{
+    margin-left:150px;
+    margin-right:150px;
+    margin-top:50px;
+}
+
+.profile_page{
+    display:flex;
+}
+
+
+
+
+
+
+
+
