@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-from django.utils.translation import gettext_lazy as_
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,12 +44,13 @@ INSTALLED_APPS = [
     'accounts',
     'crispy_forms',
     'rest_framework',
-    'api.apps.ApiConfig',
     'channels',
     'chat',
 ]
 
-ASGI_APPLICATION = 'core.asgi.application'
+
+ASGI_APPLICATION = "core.asgi.application"
+
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
@@ -104,12 +105,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_db',
-        'USER' : 'photojournal',
-        'PASSWORD' : '1234',
-        'HOST' : '127.0.0.1',
-        'PORT' : '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -138,6 +135,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en'
 
+LANGUAGES = (
+    ('ru', _('Russian')),
+    ('en', _('English')),
+)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -145,10 +147,7 @@ USE_I18N = True
 USE_TZ = True
 
 gettext = lambda s: s
-LANGUAGES = (
-    ('ru', gettext('Russian')),
-    ('en', gettext('English')),
-)
+
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'

@@ -4,10 +4,6 @@ body{
  margin: 0 auto;
 }
 
-header{
-    background-color: white;
-    height: 80px;
-}
 
 header> .header-elem {
     display:  flex;

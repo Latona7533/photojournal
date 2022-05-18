@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
-from photojournal.models import Blog
+from photojournal.models import Blog, Theme
 from modeltranslation.admin import TranslationAdmin
 
 def change_genre(modeladmin, request, queryset):
@@ -14,4 +14,4 @@ class BlogAdmin(TranslationAdmin):
     actions = [change_genre]
     prepopulated_fields = {"slug": ("title",)}
 
-
+admin.site.register(Theme)

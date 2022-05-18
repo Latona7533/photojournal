@@ -1,6 +1,8 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from django.views.generic import DetailView
+from django.views.generic import DetailView, FormView
+
+from accounts.forms import UserRegisterForm
 from accounts.models import Profile
 
 class ProfileView(LoginRequiredMixin, DetailView):
@@ -15,6 +17,6 @@ class UserRegistration(FormView):
 
     def form_valid(self, form):
         user = form.save()
-        if user is not None
+        if user is not None:
             login(self.request, user)
         return super(UserRegistration, self).form_valid(form)

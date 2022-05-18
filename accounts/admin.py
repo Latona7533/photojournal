@@ -4,6 +4,6 @@ from accounts.models import Profile
 
 
 class ProfileAdmin(TranslationAdmin):
-    list_display = ('title', 'text',)
+    list_display = ( 'username',)
 
 admin.site.register(Profile, ProfileAdmin)
